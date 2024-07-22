@@ -1,45 +1,24 @@
 pipeline {
-    agent any 
-    stages {
-         stage('Build') { 
-            steps{
-                sh 'npm install' 
-                }
-            }
-      }
-      stage('LINT' ){
-      
-        steps{
-         sh npm run lint
-
-          }
-        
-      }
-      stage('Test'){
-            steps{
-                
-          sh npm run test --passWithNoTests
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
+    agent { dockerfile true }
+stages {
+  stage('Build') {
+    steps {
+      // One or more steps need to be included within the steps block.
     }
-        stage('LINT') {
-            steps {
-                sh 'npm run lint'
-            }
-        }
-    }
-
-
-
-
-
-      }
-      
   }
+
+  stage('LINT') {
+    steps {
+      // One or more steps need to be included within the steps block.
+    }
+  }
+
+  stage('Test') {
+    steps {
+      // One or more steps need to be included within the steps block.
+    }
+  }
+
+}
+
 }
