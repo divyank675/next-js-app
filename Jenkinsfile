@@ -7,4 +7,12 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('LINT') { 
+            steps {
+                sh 'npm run lint' 
+            }
+        }
+    }
+}
 }
