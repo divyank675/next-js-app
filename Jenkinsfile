@@ -3,4 +3,3 @@ pipeline {
     stages {
         }
     }
-}
