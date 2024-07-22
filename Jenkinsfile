@@ -3,7 +3,7 @@ pipeline {
     stages {
          stage('Build') { 
             steps('install packages'){
-                step('install'){
+                step('Install'){
                 sh 'npm install' 
                 }
             }
@@ -12,7 +12,7 @@ pipeline {
       
         steps('format text'){
             
-           step('lint'){
+           step('Lint'){
          sh npm run lint
 
           }
@@ -20,7 +20,7 @@ pipeline {
       }
       stage('Test'){
             steps('sample test'){
-                step('test'){
+                step('Test'){
           sh npm run test --passWithNoTests
 
                 }
