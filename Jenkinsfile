@@ -1,23 +1,24 @@
 pipeline {
-    agent any
+agent any
 stages {
 stage('Build') {
     steps {
     // One or more steps need to be included within the steps block.
-    sh "docker build -t next-js-app:$BUILD_NUMBER"
+    sh "npm install"
     }
 }
-stage('LOGIN') {
+stage('LINT') {
     steps {
     // One or more steps need to be included within the steps block.
-    sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME"
+    sh "npm run lint"
     }
 }
 
-stage('PUSH') {
+stage('Test') {
     steps {
     // One or more steps need to be included within the steps block.
-    sh "docker push  next-js-app:$BUILD_NUMBER"
+    sh "npm run test --passWithNoTests"
     }
+}
 }
 }
