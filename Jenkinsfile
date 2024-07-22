@@ -13,8 +13,8 @@ stage('Build') {
 stage('LOGIN') {
     steps {
     // One or more steps need to be included within the steps block.
-      sh "echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin" 
-    }
+     sh "docker -H tcp://172.17.0.1:4200 login -u divyankchauhan -p $DOCKER_PASSWORD"
+}
 }
 
 
