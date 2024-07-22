@@ -1,12 +1,45 @@
 pipeline {
+    agent any 
+    stages {
+         stage('Build') { 
+            steps{
+                sh 'npm install' 
+                }
+            }
+      }
+      stage('LINT' ){
+      
+        steps{
+         sh npm run lint
+
+          }
+        
+      }
+      stage('Test'){
+            steps{
+                
+          sh npm run test --passWithNoTests
+pipeline {
     agent any
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
-                sh 'npm install' 
-                sh 'npm run lint'
-                sh  npm run test --passWithNoTests
+                sh 'npm install'
             }
         }
     }
+        stage('LINT') {
+            steps {
+                sh 'npm run lint'
+            }
+        }
+    }
+
+
+
+
+
+      }
+      
+  }
 }
