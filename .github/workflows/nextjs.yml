@@ -14,10 +14,10 @@ jobs:
         node-version: '18.20.2'
     - name: Install dependencies
       run: npm install
-      working-directory: ./nextjs-app
+      working-directory: ./
     - name: Lint
       run: npm run lint
-      working-directory: ./nextjs-app
+      working-directory: ./
     - name: Test
       run: npm run test --passWithNoTests
-      working-directory: ./nextjs-app
+      working-directory: ./
