@@ -40,7 +40,7 @@ jobs:
         context: .
         file: Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/sample-next-js-app:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/sample-next-js-app:${{ github.run_number }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new
 
