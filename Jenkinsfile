@@ -10,7 +10,7 @@ stage('Build') {
 stage('LOGIN') {
     steps {
     // One or more steps need to be included within the steps block.
-    sh "echo ${DOCKER_PASSWORD} | docker login -u $DOCKER_USERNAME"
+    sh " docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
     }
 }
 
