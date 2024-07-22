@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('BUILD') {
             steps {
-                sh 'sudo docker build . -t sample-next-js-app:$BUILD_NUMBERy'
+                sh 'sudo docker build . -t divyankchauhan/sample-next-js-app:$BUILD_NUMBERy'
             }
         }
     }
