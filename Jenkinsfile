@@ -2,23 +2,23 @@ pipeline {
     agent { dockerfile true }
     stages {
          stage('Build') { 
-            steps {
-                step{
+            steps('npm install') {
+                step('npm install'){
                 sh 'npm install' 
              }
             }
       }
       stage('LINT' ){
       
-         steps {
-            step{
+         steps('npm lint') {
+            step('npm lint'){
          sh npm run lint
             }
           }
       }
       stage('Test'){
-          steps{
-                step{
+          steps('npm test'){
+                step('npm test'){
           sh npm run test --passWithNoTests
                 }
           
